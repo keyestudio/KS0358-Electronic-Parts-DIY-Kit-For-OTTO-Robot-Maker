@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Self-balancing Car'
+project = 'DIY Kit For OTTO'
 copyright = 'keyestudio'
 author = 'keyestudio'
 
