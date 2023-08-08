@@ -61,7 +61,7 @@ has two different kinds of interrupts: “external”, and “pin change”.
 For the list of available interrupt pins and their interrupt types, see the
 PORT / PIN BESTIARY, below.
 
-### External Interrupts
+External Interrupts
 There are a varying number of external interrupt pins on the different
 processors. The Uno supports only 2 and they are mapped to Arduino pins 2 and 3.
 The 2560 supports 6 usable, the Leonardo supports 5, and the ATmega1284p supports 3.
@@ -71,7 +71,7 @@ the time your user function is running, you know exactly which pin interrupted a
 the time of the event, and how it changed. On the other hand, as mentioned there
 are a limited number of these pins.
 
-### Pin Change Interrupts
+Pin Change Interrupts
 On the Arduino Uno (and again, all 328p-based boards) and 644/1284-based boards,
 the pin change interrupts can be enabled on any or all of the pins. The two
 pins 2 and 3 on 328p-based boards, or three pins (2, 10, and 11) on the
@@ -87,7 +87,7 @@ Furthermore, the processor's pins, and pin change interrupts, are grouped into
 only 3 interrupt vectors (subroutines) available for the entire body of 20 pin
 change interrupt pins.
 
-### The Library and Pin Change Interrupts
+The Library and Pin Change Interrupts
 When an event triggers an interrupt on any interrupt-enabled pin on a port, a
 subroutine attached to that pin's port is triggered. It is up to the interrupt
 library to set the proper port to receive interrupts for a pin, to determine
@@ -169,29 +169,29 @@ Theoretically pins 0 and 1 (RX and TX) are supported but as these pins have
 a special purpose on the Arduino, their use in this library has not been tested.
 
 ## Summary
-### Arduino Uno/Duemilanove/etc.
+Arduino Uno/Duemilanove/etc.
 Interrupt Type | Pins
 -------------- | --------------
 External       | 2 3
 Pin Change     | 2-13 and A0-A5
-### Arduino Mega2560
+Arduino Mega2560
 Interrupt Type | Pins
 -------------- | --------------
 External       | 2 3 and 18-21
 Pin Change     | 10-15 and A8-A15 and SS, SCK, MOSI, MISO
-### Arduino Leonardo
+Arduino Leonardo
 Interrupt Type | Pins
 -------------- | --------------
 External       | 0-3 and 7
 Pin Change     | 8-11 and SCK, MOSI, MISO
-### Mighty 1284
+Mighty 1284
 Interrupt Type | Pins
 -------------- | --------------
 External       | 2 10 11
 Pin Change     | 0-31 (aka: 0-23 and A0-A7)
 
 ## Details
-### Arduino Uno
+Arduino Uno
 
 <pre>
 Interrupt Pins:
@@ -212,7 +212,7 @@ Pin     Interrupt               Pin     Interrupt       Pin     Interrupt
                                 13      PCINT5  PB5
 </pre>
 
-### Leonardo Pins LEONARDO
+Leonardo Pins LEONARDO
 
 <pre>
 Interrupt pins:
@@ -242,7 +242,7 @@ static const uint8_t SCK  = 15;
 
 </pre>
 
-### ATmega2560 Support
+ATmega2560 Support
 
 <pre>
 External Interrupts ------------------------------------------------------------
@@ -295,7 +295,7 @@ the library's code and thus is not supported by this library.  It is the same
 pin the Arduino uses to upload sketches, and it is connected to the FT232RL
 USB-to-Serial chip (ATmega16U2 on the R3).
 
-### Mighty 1284 Support
+Mighty 1284 Support
 The ATmega 1284p shares pinout with the 644; the only difference is in memory
 size. We use the "Mighty 1284" platform as our model, because the needed files are
 mature and complete.
